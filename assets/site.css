@@ -84,7 +84,7 @@ section[id],div[id]{scroll-margin-top:100px}
 body.nav-open .mnav{display:flex}
 
 /* hero (home) */
-.hero{position:relative;height:900px;background:var(--navy);color:#fff;overflow:hidden}
+.hero{position:relative;height:calc(100vh - 86px);height:calc(100svh - 86px);min-height:600px;max-height:900px;background:var(--navy);color:#fff;overflow:hidden}
 .hero .bg{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;object-position:62% 60%;transition:transform .9s var(--ease);will-change:transform}
 .hero:hover .bg{transform:scale(1.02)}
 .hero .shade{position:absolute;inset:0;background:radial-gradient(40% 45% at 22% 22%,rgba(1,16,28,.55),transparent 70%),radial-gradient(30% 40% at 88% 82%,rgba(1,16,28,.55),transparent 70%),linear-gradient(180deg,rgba(1,16,28,.25),rgba(1,16,28,0) 30%,rgba(1,16,28,0) 75%,rgba(1,16,28,.3))}
@@ -94,7 +94,7 @@ body.nav-open .mnav{display:flex}
 .hero:hover .bikelink .cue{opacity:1;transform:translate(-50%,-6px)}
 .hero .in{pointer-events:none;z-index:2}
 .hero .in a,.hero .in .stats{pointer-events:auto}
-.hero .in{position:absolute;inset:0;max-width:1440px;margin:0 auto;padding:60px 40px 40px;display:flex;flex-direction:column;justify-content:space-between}
+.hero .in{position:absolute;inset:0;max-width:1440px;margin:0 auto;padding:clamp(32px,5vh,60px) 40px 36px;display:flex;flex-direction:column;justify-content:space-between}
 .hero h1{max-width:760px}
 .hero .bot{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
 .hero .bot .l{max-width:420px;display:flex;flex-direction:column;gap:24px}
@@ -635,3 +635,5 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 .hero video.bg.ready{opacity:1}
 .gmain video{width:100%;height:100%;object-fit:contain;background:#1b232f}
 .thumbs .tvid{display:grid;place-items:center;color:#fff;font-family:var(--mono);font-size:12px;line-height:1.2;text-align:center;background:linear-gradient(160deg,#0a2540,var(--navy))}
+
+@media (min-width:1024px) and (max-height:720px){.hero h1{font-size:56px}.hero .stat b{font-size:36px}.hero .stat{padding-bottom:10px;margin-bottom:10px}.hero .bot .l p{font-size:17px}}
