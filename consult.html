@@ -19,70 +19,80 @@
 <header class="hdr">
   <div class="in">
     <a class="logo" href="./index.html" aria-label="SP Mobility 홈"><img src="./assets/img/logo-sp.png" alt="SP MOBILITY"></a>
-    <nav><a href="./about.html">회사소개</a><a href="./product.html">제품 안내</a><a href="./consult.html">구매 상담</a><a href="./support.html">고객지원</a></nav>
+    <nav>
+      <div class="item"><a href="./about.html">회사소개</a><div class="sub"><a href="./about.html#company">에스피모빌리티 소개</a><a href="./about.html#eco">E.V Eco System</a><a href="./about.html#partner">협력 파트너 문의</a></div></div>
+      <div class="item"><a href="./product.html">제품 안내</a><div class="sub"><a href="./product.html">캄페온 CAMPEON</a><a href="./product.html#spec">제품 사양</a><a href="./product.html#price">가격 정보</a></div></div>
+      <div class="item"><a href="./consult.html">구매 상담</a><div class="sub"><a href="./consult.html?type=buy">신차 구매</a><a href="./consult.html?type=rent">렌트 · 리스</a></div></div>
+      <div class="item"><a href="./support.html">고객지원</a><div class="sub"><a href="./support.html#as">A/S 안내</a><a href="./support.html#dealers">협력점 안내</a></div></div>
+    </nav>
     <div class="right"><a class="tel" href="tel:1661-5958">1661-5958</a><a class="btn" href="./consult.html">구매 상담 <span class="ar">→</span></a><button class="menu" aria-label="메뉴 열기"><span></span></button></div>
   </div>
+  <div class="band"></div>
 </header>
-<div class="mnav"><a href="./about.html">회사소개</a><a href="./product.html">제품 안내</a><a href="./consult.html">구매 상담</a><a href="./support.html">고객지원</a><a class="tel" href="tel:1661-5958">대표번호 1661-5958</a></div>
+<div class="mnav">
+  <a href="./about.html">회사소개</a><div class="sub"><a href="./about.html#company">에스피모빌리티 소개</a><a href="./about.html#eco">E.V Eco System</a><a href="./about.html#partner">협력 파트너 문의</a></div>
+  <a href="./product.html">제품 안내</a><div class="sub"><a href="./product.html">캄페온</a><a href="./product.html#spec">제품 사양</a><a href="./product.html#price">가격 정보</a></div>
+  <a href="./consult.html">구매 상담</a><div class="sub"><a href="./consult.html?type=buy">신차 구매</a><a href="./consult.html?type=rent">렌트 · 리스</a></div>
+  <a href="./support.html">고객지원</a><div class="sub"><a href="./support.html#as">A/S 안내</a><a href="./support.html#dealers">협력점 안내</a></div>
+  <a class="tel" href="tel:1661-5958">대표번호 1661-5958</a>
+</div>
 
-<section class="phero short">
-  <div class="glow"></div>
-  <div class="in">
-    <div class="crumb"><a href="./index.html">Home</a><span>/</span><span>Consult</span></div>
-    <p class="eyebrow rv" style="color:#fff">Purchase Consultation</p>
-    <h1 class="rv">신차 구매 &amp; <span class="b">렌트 · 리스</span> 상담</h1>
-    <p class="rv" style="--d:.1s">상황에 맞는 구매 방식으로 캄페온을 만나보세요. 아래 정보를 남겨주시면 담당자가 확인 후 연락드립니다.</p>
-  </div>
-</section>
-
-<section class="wrap">
-  <div class="formwrap">
-    <div class="form rv">
-      <form name="consult" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
-        <input type="hidden" name="form-name" value="consult"><p class="sr"><label>Don’t fill this out: <input name="bot-field"></label></p>
-        <div class="field"><span class="lbl">상담 유형 <span class="req">*</span></span>
-          <div class="radios">
-            <label><input type="radio" name="상담유형" value="신차 구매" checked> 신차 구매</label>
-            <label><input type="radio" name="상담유형" value="렌트/리스"> 렌트 / 리스</label>
-          </div>
-        </div>
-        <div class="exp">
-          <div><b>신차 구매란?</b><p>차량을 직접 구매하는 방식입니다. 지역별 전기 이륜차 보조금 적용 여부와 할부 조건을 함께 안내해 드립니다.</p></div>
-          <div><b>렌트 / 리스란?</b><p>차량 구매 없이 월 비용을 납입하며 이용하는 방식입니다. 목돈 부담 없이 시작할 수 있어 배달대행사와 라이더에게 적합합니다.</p></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="c-name">신청자 <span class="req">*</span></label><input id="c-name" name="이름" type="text" required placeholder="이름을 입력하세요"></div>
-          <div class="field"><label for="c-tel">연락처 <span class="req">*</span></label><input id="c-tel" name="연락처" type="tel" required placeholder="010-0000-0000"></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="c-sido">거주지 <span class="req">*</span></label>
-            <select id="c-sido" name="거주지" required><option value="">시/도 선택</option><option>서울</option><option>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select></div>
-          <div class="field"><label for="c-gu">시/군/구</label><input id="c-gu" name="시군구" type="text" placeholder="예: 아산시"></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="c-who">구분</label>
-            <select id="c-who" name="구분"><option>개인</option><option>배달대행사 · 법인</option><option>판매점 · 정비소</option></select></div>
-          <div class="field"><label for="c-qty">희망 대수</label>
-            <select id="c-qty" name="희망대수"><option>1대</option><option>2 ~ 5대</option><option>6 ~ 10대</option><option>10대 이상</option></select></div>
-        </div>
-        <div class="field"><label for="c-msg">문의 내용</label><textarea id="c-msg" name="문의내용" placeholder="희망 시기, 보조금 문의, 기타 궁금한 점을 적어주세요."></textarea></div>
-        <div class="field"><label class="check"><input type="checkbox" name="개인정보동의" value="동의" required> 개인정보 수집 및 이용에 동의합니다. (필수) 수집 항목: 이름, 연락처, 거주지. 이용 목적: 구매 상담. 보유 기간: 상담 완료 후 1년.</label></div>
-        <button class="btn lg" type="submit">상담 신청하기 <span class="ar">→</span></button>
-      </form>
-      <div class="done"><h3>상담 신청이 접수되었습니다.</h3><p style="margin-top:12px;color:var(--w70)">담당자가 확인 후 연락드리겠습니다.</p></div>
+<main class="cpage">
+  <aside class="cpanel">
+    <div class="glow"></div>
+    <div>
+      <p class="eyebrow rv">Purchase Consultation</p>
+      <h1 class="rv" style="--d:.05s">신차 구매 &amp;<br><span class="b">렌트 · 리스</span> 상담</h1>
+      <p class="lead rv" style="--d:.1s">상황에 맞는 구매 방식으로 캄페온을 만나보세요. 정보를 남겨주시면 담당자가 확인 후 연락드립니다.</p>
+      <a class="tel rv" style="--d:.15s" href="tel:1661-5958">1661-5958<small>전화 상담 · 평일 09:00 – 18:00</small></a>
+      <ol class="rv" style="--d:.2s">
+        <li><b>01</b><span><strong>상담 신청</strong>구매 방식과 연락처를 남깁니다.</span></li>
+        <li><b>02</b><span><strong>담당자 연락</strong>1영업일 내 전화 또는 문자로 연락드립니다.</span></li>
+        <li><b>03</b><span><strong>견적 · 계약</strong>보조금 적용 여부와 조건을 확인하고 진행합니다.</span></li>
+      </ol>
     </div>
-    <aside class="side rv" style="--d:.1s">
-      <h3>전화 상담</h3>
-      <p>바로 상담을 원하시면 대표번호로 연락 주세요.</p>
-      <a class="big" href="tel:1661-5958">1661-5958</a>
-      <ul>
-        <li><span>상담 시간</span><span>평일 09:00 – 18:00</span></li>
-        <li><span>이메일</span><span>info.spmobility@gmail.com</span></li>
-        <li><span>제품</span><a href="./product.html" style="text-decoration:underline">캄페온 사양 보기</a></li>
-      </ul>
-    </aside>
-  </div>
-</section>
+    <div class="art rv" style="--d:.25s"><img src="./assets/img/product-quarter.webp" alt="캄페온 전기 이륜차"></div>
+  </aside>
+
+  <section class="cform">
+    <form name="consult" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+      <input type="hidden" name="form-name" value="consult"><p class="sr"><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+      <div class="step rv">
+        <h2><b>01</b>상담 유형 <small>필수</small></h2>
+        <div class="types">
+          <label><input type="radio" name="상담유형" value="신차 구매" checked><b>신차 구매</b><span>차량을 직접 구매합니다. 지역별 전기 이륜차 보조금과 할부 조건을 함께 안내합니다.</span><i></i></label>
+          <label><input type="radio" name="상담유형" value="렌트/리스"><b>렌트 / 리스</b><span>구매 없이 월 비용으로 이용합니다. 목돈 부담이 없어 배달대행사와 라이더에게 적합합니다.</span><i></i></label>
+        </div>
+      </div>
+
+      <div class="step rv" style="--d:.05s">
+        <h2><b>02</b>신청자 정보</h2>
+        <div class="grid">
+          <div class="f"><input id="c-name" name="이름" type="text" required placeholder="홍길동"><label for="c-name">이름 <span class="req">*</span></label></div>
+          <div class="f"><input id="c-tel" name="연락처" type="tel" required placeholder="010-0000-0000"><label for="c-tel">연락처 <span class="req">*</span></label></div>
+          <div class="f"><select id="c-sido" name="거주지" required><option value="" selected disabled hidden></option><option>서울</option><option>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select><label for="c-sido">거주지 (시/도) <span class="req">*</span></label></div>
+          <div class="f"><input id="c-gu" name="시군구" type="text" placeholder="아산시"><label for="c-gu">시/군/구</label></div>
+          <div class="f"><select id="c-who" name="구분"><option value="" selected disabled hidden></option><option>개인</option><option>배달대행사 · 법인</option><option>판매점 · 정비소</option></select><label for="c-who">구분</label></div>
+          <div class="f"><select id="c-qty" name="희망대수"><option value="" selected disabled hidden></option><option>1대</option><option>2 ~ 5대</option><option>6 ~ 10대</option><option>10대 이상</option></select><label for="c-qty">희망 대수</label></div>
+        </div>
+      </div>
+
+      <div class="step rv" style="--d:.1s">
+        <h2><b>03</b>문의 내용 <small>선택</small></h2>
+        <div class="grid">
+          <div class="f full"><textarea id="c-msg" name="문의내용" placeholder="희망 시기, 보조금 문의, 기타 궁금한 점을 적어주세요."></textarea><label for="c-msg">문의 내용</label></div>
+        </div>
+        <label class="agree"><input type="checkbox" name="개인정보동의" value="동의" required><span><b>개인정보 수집 및 이용에 동의합니다. (필수)</b><br>수집 항목: 이름, 연락처, 거주지 · 이용 목적: 구매 상담 · 보유 기간: 상담 완료 후 1년</span></label>
+        <div class="submit">
+          <button class="btn" type="submit">상담 신청하기 <span class="ar">→</span></button>
+          <p>접수 후 1영업일 내에 담당자가 연락드립니다.</p>
+        </div>
+      </div>
+    </form>
+    <div class="done"><h2>상담 신청이 접수되었습니다.</h2><p style="margin-top:12px;color:var(--w70)">담당자가 확인 후 연락드리겠습니다.</p></div>
+  </section>
+</main>
 
 <footer class="foot">
   <div class="in">
