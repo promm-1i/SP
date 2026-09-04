@@ -633,5 +633,5 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 /* 영상 슬롯: 파일이 로드되면 사진 위에 표시 */
 .hero video.bg{opacity:0;transition:opacity 1s var(--ease);pointer-events:none}
 .hero video.bg.ready{opacity:1}
-.gmain video{width:100%;height:100%;object-fit:cover}
+.gmain video{width:100%;height:100%;object-fit:contain;background:#1b232f}
 .thumbs .tvid{display:grid;place-items:center;color:#fff;font-family:var(--mono);font-size:12px;line-height:1.2;text-align:center;background:linear-gradient(160deg,#0a2540,var(--navy))}
