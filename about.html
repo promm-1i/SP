@@ -103,36 +103,40 @@
 <!-- 협력 파트너 문의 -->
 <section class="band" id="partner">
   <div class="wrap">
-    <div class="formwrap">
-      <div class="form rv">
-        <p class="eyebrow">Partnership</p>
-        <h2>협력 파트너 <span class="b">문의</span></h2>
-        <p class="lead" style="margin:20px 0 40px">전기 이륜차 판매 및 서비스 협력 사업에 관심 있는 기업과 사업자를 모집합니다. 아래 신청서를 작성해 주시면 담당자가 상담을 도와드립니다.</p>
+    <div class="shead">
+      <div class="rv"><p class="eyebrow">Partnership</p><h2>협력 파트너 <span class="b">문의</span></h2></div>
+      <div class="r rv" style="--d:.1s"><p>전기 이륜차 판매 및 서비스 협력 사업에 관심 있는 기업과 사업자를 모집합니다. 신청서를 작성해 주시면 담당자가 상담을 도와드립니다.</p></div>
+    </div>
+    <div class="pform">
+      <div class="cform rv">
         <form name="partner" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
           <input type="hidden" name="form-name" value="partner"><p class="sr"><label>Don’t fill this out: <input name="bot-field"></label></p>
-          <div class="row2">
-            <div class="field"><label for="p-name">성함 <span class="req">*</span></label><input id="p-name" name="성함" type="text" required></div>
-            <div class="field"><label for="p-tel">연락처 <span class="req">*</span></label><input id="p-tel" name="연락처" type="tel" required placeholder="010-0000-0000"></div>
+          <div class="step">
+            <h2><b>01</b>담당자 정보</h2>
+            <div class="grid">
+              <div class="f"><input id="p-name" name="성함" type="text" required placeholder="홍길동"><label for="p-name">성함 <span class="req">*</span></label></div>
+              <div class="f"><input id="p-tel" name="연락처" type="tel" required placeholder="010-0000-0000"><label for="p-tel">연락처 <span class="req">*</span></label></div>
+              <div class="f"><input id="p-mail" name="이메일" type="email" placeholder="name@company.com"><label for="p-mail">이메일 (선택)</label></div>
+              <div class="f"><input id="p-co" name="회사명" type="text" required placeholder="OO바이크"><label for="p-co">회사(업체)명 <span class="req">*</span></label></div>
+            </div>
           </div>
-          <div class="row2">
-            <div class="field"><label for="p-mail">이메일 (선택)</label><input id="p-mail" name="이메일" type="email"></div>
-            <div class="field"><label for="p-co">회사(업체)명 <span class="req">*</span></label><input id="p-co" name="회사명" type="text" required></div>
+          <div class="step">
+            <h2><b>02</b>사업 정보</h2>
+            <div class="grid">
+              <div class="f"><select id="p-sido" name="희망지역" required><option value="" selected disabled hidden></option><option>서울</option><option>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select><label for="p-sido">희망 사업 지역 (시/도) <span class="req">*</span></label></div>
+              <div class="f"><input id="p-gu" name="시군구" type="text" placeholder="아산시"><label for="p-gu">시/군/구</label></div>
+              <div class="f"><select id="p-biz" name="업종"><option value="" selected disabled hidden></option><option>오토바이 판매점</option><option>오토바이 정비소</option><option>배달대행사</option><option>기타</option></select><label for="p-biz">현재 운영 중인 업종 (선택)</label></div>
+              <div class="f"><input id="p-url" name="홈페이지" type="url" placeholder="https://"><label for="p-url">홈페이지 / SNS (선택)</label></div>
+            </div>
           </div>
-          <div class="row2">
-            <div class="field"><label for="p-sido">희망 사업 지역 <span class="req">*</span></label>
-              <select id="p-sido" name="희망지역" required><option value="">시/도 선택</option><option>서울</option><option>부산</option><option>대구</option><option>인천</option><option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>경기</option><option>강원</option><option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option></select></div>
-            <div class="field"><label for="p-gu">시/군/구</label><input id="p-gu" name="시군구" type="text" placeholder="예: 아산시"></div>
+          <div class="step">
+            <h2><b>03</b>상담 · 문의 사항 <small>필수</small></h2>
+            <div class="grid"><div class="f full"><textarea id="p-msg" name="문의사항" required placeholder="협력 형태, 보유 시설, 궁금한 점을 적어주세요."></textarea><label for="p-msg">문의 사항 <span class="req">*</span></label></div></div>
+            <label class="agree"><input type="checkbox" name="개인정보동의" value="동의" required><span><b>개인정보 수집 및 이용에 동의합니다. (필수)</b><br>수집 항목: 성함, 연락처, 이메일, 회사명 · 이용 목적: 협력 파트너 상담 · 보유 기간: 상담 완료 후 1년</span></label>
+            <div class="submit"><button class="btn" type="submit">협력 파트너 상담 신청 <span class="ar">→</span></button><p>접수 후 담당자가 확인하고 연락드립니다.</p></div>
           </div>
-          <div class="row2">
-            <div class="field"><label for="p-biz">현재 운영 중인 업종 (선택)</label>
-              <select id="p-biz" name="업종"><option value="">선택</option><option>오토바이 판매점</option><option>오토바이 정비소</option><option>배달대행사</option><option>기타</option></select></div>
-            <div class="field"><label for="p-url">홈페이지 / SNS (선택)</label><input id="p-url" name="홈페이지" type="url" placeholder="https://"></div>
-          </div>
-          <div class="field"><label for="p-msg">상담 / 문의 사항 <span class="req">*</span></label><textarea id="p-msg" name="문의사항" required></textarea></div>
-          <div class="field"><label class="check"><input type="checkbox" name="개인정보동의" value="동의" required> 개인정보 수집 및 이용에 동의합니다. (필수) 수집 항목: 성함, 연락처, 이메일, 회사명. 이용 목적: 협력 파트너 상담. 보유 기간: 상담 완료 후 1년.</label></div>
-          <button class="btn lg" type="submit">협력 파트너 상담 신청 <span class="ar">→</span></button>
         </form>
-        <div class="done"><h3>신청이 접수되었습니다.</h3><p style="margin-top:12px;color:var(--w70)">담당자가 확인 후 연락드리겠습니다.</p></div>
+        <div class="done"><h2>신청이 접수되었습니다.</h2><p style="margin-top:12px;color:var(--w70)">담당자가 확인 후 연락드리겠습니다.</p></div>
       </div>
       <aside class="side rv" style="--d:.1s">
         <h3>전화로 문의하기</h3>

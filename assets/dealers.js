@@ -8,6 +8,10 @@
  *   { name: "OO바이크 천안점", region: "충청", type: "dealer",
  *     addr: "충남 천안시 서북구 OO로 12, 1층", tel: "041-000-0000", lat: 36.8151, lng: 127.1139 },
  */
+/* 카카오맵을 쓰려면 developers.kakao.com 에서 앱을 만들고 [플랫폼 > Web] 에 사이트 도메인을 등록한 뒤
+ * "JavaScript 키" 를 아래 따옴표 안에 넣으세요. 비워 두면 OpenStreetMap 지도로 표시됩니다. */
+window.KAKAO_APP_KEY = "";
+
 window.DEALERS = [
   { name: "에스피모빌리티 본사", region: "충청", type: "hq",
     addr: "충청남도 아산시 둔포면 봉신로230번길 42, 2층", tel: "1661-5958",
