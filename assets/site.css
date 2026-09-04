@@ -87,7 +87,7 @@ body.nav-open .mnav{display:flex}
 .hero{position:relative;height:900px;background:var(--navy);color:#fff;overflow:hidden}
 .hero .bg{position:absolute;inset:-3%;width:106%;height:106%;object-fit:cover;object-position:62% 60%;transition:transform .9s var(--ease);will-change:transform}
 .hero:hover .bg{transform:scale(1.02)}
-.hero .shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,16,28,0) 70%,rgba(1,16,28,.45)),linear-gradient(180deg,rgba(1,16,28,.45),rgba(1,16,28,0) 40%,rgba(1,16,28,.4))}
+.hero .shade{position:absolute;inset:0;background:radial-gradient(40% 45% at 22% 22%,rgba(1,16,28,.55),transparent 70%),radial-gradient(30% 40% at 88% 82%,rgba(1,16,28,.55),transparent 70%),linear-gradient(180deg,rgba(1,16,28,.25),rgba(1,16,28,0) 30%,rgba(1,16,28,0) 75%,rgba(1,16,28,.3))}
 .hero .bikelink{position:absolute;inset:0;z-index:1;cursor:pointer}
 .hero .bikelink .cue{position:absolute;left:50%;top:38%;transform:translate(-50%,0);display:inline-flex;align-items:center;gap:12px;padding:10px 14px 10px 16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);color:#fff;font-family:var(--mono);font-size:13px;text-transform:uppercase;opacity:0;transition:opacity .3s,transform .3s}
 .hero .bikelink .cue img{height:22px;width:auto}
@@ -426,14 +426,16 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 .cform .types label:has(input:checked) i::after{transform:scale(1)}
 .cform .types label:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:2px}
 .cform .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
-.cform .f{position:relative;padding:22px 0 0;border-bottom:1px solid rgba(0,0,0,.22);transition:border-color .25s}
-.cform .f:focus-within{border-bottom-color:var(--navy)}
-.cform .f label{position:absolute;left:0;top:22px;font-size:16px;color:var(--muted);pointer-events:none;transition:all .2s var(--ease);transform-origin:left top}
+.cform .grid{row-gap:12px}
+.cform .f{position:relative;padding:20px 16px 0;background:#fff;border:1px solid rgba(0,0,0,.18);transition:border-color .25s,box-shadow .25s}
+.cform .f:hover{border-color:rgba(1,16,28,.45)}
+.cform .f:focus-within{border-color:var(--navy);box-shadow:0 0 0 3px var(--blue-20)}
+.cform .f label{position:absolute;left:16px;top:20px;font-size:16px;color:var(--muted);pointer-events:none;transition:all .2s var(--ease);transform-origin:left top}
 .cform .f .req{color:var(--blue)}
 .cform .f input,.cform .f select,.cform .f textarea{border:0;height:44px;padding:8px 0 10px;background:transparent;font-size:17px;color:var(--navy);caret-color:var(--blue)}
-.cform .f select{padding-right:32px;background-position:right 4px center}
+.cform .f select{padding-right:32px;background-position:right 2px center}
 .cform .f textarea{height:120px;padding-top:10px;resize:vertical}
-.cform .f input:focus~label,.cform .f input:not(:placeholder-shown)~label,.cform .f select:focus~label,.cform .f select.has~label,.cform .f textarea:focus~label,.cform .f textarea:not(:placeholder-shown)~label{top:0;font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--navy)}
+.cform .f input:focus~label,.cform .f input:not(:placeholder-shown)~label,.cform .f select:focus~label,.cform .f select.has~label,.cform .f textarea:focus~label,.cform .f textarea:not(:placeholder-shown)~label{top:6px;font-size:11px;letter-spacing:.02em;color:var(--blue)}
 .cform .f input::placeholder,.cform .f textarea::placeholder{color:transparent}
 .cform .f input:focus::placeholder,.cform .f textarea:focus::placeholder{color:rgba(74,74,74,.5)}
 .cform .f.full{grid-column:1/-1}
@@ -627,3 +629,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 .kinfo a{font-family:var(--mono);font-size:13px;color:var(--blue)}
 
 @media (max-width:1023px){.pform{grid-template-columns:1fr;gap:32px}.cform .step{padding-bottom:40px}}
+
+/* 영상 슬롯: 파일이 로드되면 사진 위에 표시 */
+.hero video.bg{opacity:0;transition:opacity 1s var(--ease);pointer-events:none}
+.hero video.bg.ready{opacity:1}
+.gmain video{width:100%;height:100%;object-fit:cover}
+.thumbs .tvid{display:grid;place-items:center;color:#fff;font-family:var(--mono);font-size:12px;line-height:1.2;text-align:center;background:linear-gradient(160deg,#0a2540,var(--navy))}

@@ -37,8 +37,8 @@
 
   // product: gallery thumbs, quantity, tab scrollspy
   var gmain = document.querySelector('.gmain');
-  if (gmain) {
-    var slides = [].filter.call(gmain.children, function (c) { return c.matches('.spin, img'); }), thumbs = document.querySelectorAll('.thumbs button'), gi = 0;
+  var buildGallery = function () {
+    var slides = [].filter.call(gmain.children, function (c) { return c.matches('.spin, img, video'); }), thumbs = document.querySelectorAll('.thumbs button'), gi = 0;
     var gnum = gmain.querySelector('.gnum'), gcap = gmain.querySelector('.gcap');
     var go = function (i) {
       gi = (i + slides.length) % slides.length;
@@ -56,6 +56,30 @@
     var tabs = document.querySelectorAll('.ptabs a'), secs = [].map.call(tabs, function (a) { return document.querySelector(a.getAttribute('href')); });
     var spy = function () { var y = window.scrollY + 170, cur = 0; secs.forEach(function (s, i) { if (s && s.offsetTop <= y) cur = i; }); tabs.forEach(function (a, i) { a.classList.toggle('on', i === cur); }); };
     window.addEventListener('scroll', spy, { passive: true }); spy();
+    go(0);
+  };
+  if (gmain) { buildGallery(); window.addEventListener('gallery:rebuild', buildGallery); }
+
+  // hero video: only fetch when the file exists (HEAD), then fade in over the photo
+  var hv = document.querySelector('.hero video.bg');
+  if (hv && location.protocol !== 'file:') {
+    fetch(hv.dataset.src, { method: 'HEAD' }).then(function (r) {
+      if (!r.ok) return; hv.src = hv.dataset.src;
+      hv.addEventListener('canplay', function () { hv.classList.add('ready'); hv.play().catch(function () {}); }, { once: true });
+    }).catch(function () {});
+  }
+
+  // product gallery video slot (data-video on .gmain): adds a first slide + thumb when the file exists
+  var gm = document.querySelector('.gmain[data-video]');
+  if (gm && location.protocol !== 'file:') {
+    fetch(gm.dataset.video, { method: 'HEAD' }).then(function (r) {
+      if (!r.ok) return;
+      var v = document.createElement('video'); v.src = gm.dataset.video; v.muted = true; v.loop = true; v.playsInline = true; v.autoplay = true; v.dataset.cap = '360° 영상';
+      gm.insertBefore(v, gm.firstElementChild);
+      var t = document.createElement('button'); t.type = 'button'; t.className = 'tvid'; t.innerHTML = 'VIDEO<br>360°'; t.setAttribute('aria-label', '360도 영상');
+      var th = document.querySelector('.thumbs'); th.insertBefore(t, th.firstElementChild);
+      window.dispatchEvent(new Event('gallery:rebuild'));
+    }).catch(function () {});
   }
 
   // home hero: subtle mouse parallax on the background photo
