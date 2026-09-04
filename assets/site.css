@@ -532,7 +532,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 .shop{max-width:1440px;margin:0 auto;padding:40px 40px 88px;display:grid;grid-template-columns:1fr 460px;gap:64px;align-items:start}
 .gallery{position:sticky;top:110px}
 .gmain{position:relative;aspect-ratio:4/3;background:var(--navy);overflow:hidden}
-.gmain>*{position:absolute;inset:0;opacity:0;transition:opacity .5s var(--ease);pointer-events:none}
+.gmain>img,.gmain>video,.gmain>.spin{position:absolute;inset:0;opacity:0;transition:opacity .5s var(--ease);pointer-events:none}
 .gmain>.on{opacity:1;pointer-events:auto}
 .gmain img{width:100%;height:100%;object-fit:cover}
 .gmain .spin{max-width:none;aspect-ratio:auto;width:100%;height:100%;background:radial-gradient(60% 55% at 55% 45%,rgba(20,112,168,.45),transparent 70%)}

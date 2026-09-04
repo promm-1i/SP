@@ -43,7 +43,7 @@
     var go = function (i) {
       gi = (i + slides.length) % slides.length;
       slides.forEach(function (s, k) { s.classList.toggle('on', k === gi); }); thumbs.forEach(function (x, k) { x.classList.toggle('on', k === gi); });
-      if (gnum) gnum.textContent = (gi + 1) + ' / ' + slides.length; if (gcap) gcap.textContent = slides[gi].dataset.cap || '360° 회전';
+      if (gnum) gnum.textContent = (gi + 1) + ' / ' + slides.length; if (gcap) gcap.textContent = slides[gi].dataset.cap || '';
       if (thumbs[gi]) thumbs[gi].scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
     };
     thumbs.forEach(function (t, i) { t.addEventListener('click', function () { go(i); }); });
