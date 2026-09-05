@@ -1,7 +1,7 @@
 # SP 사이트를 LE(럭스일렉트라) 사이트로 복제한다. 구조·디자인은 동일, 회사 정보·로고·이메일만 교체.
 #   python C:/web-project/SP/make_le.py
 # 결과: C:/web-project/LE/  (매번 SP 기준으로 새로 생성한다 — LE 를 직접 고치지 말고 SP 를 고친 뒤 다시 돌린다)
-import os, shutil, re
+import os, shutil, re, stat
 
 SRC = os.path.dirname(os.path.abspath(__file__))
 DST = os.path.join(os.path.dirname(SRC), 'LE')
@@ -23,8 +23,8 @@ REPL = [
 ]
 
 if os.path.exists(DST):
-    shutil.rmtree(DST)
-shutil.copytree(SRC, DST, ignore=shutil.ignore_patterns('make_le.py', '__pycache__'))
+    shutil.rmtree(DST, onerror=lambda f, p, e: (os.chmod(p, stat.S_IWRITE), f(p)))
+shutil.copytree(SRC, DST, ignore=shutil.ignore_patterns('make_le.py', 'make_variants.py', 'variants', '__pycache__', '.git', '.impeccable'))
 
 for name in os.listdir(DST):
     if not name.endswith('.html'):
