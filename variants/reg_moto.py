@@ -10,7 +10,7 @@ ROOT = r'C:\web-project\mintcl-netlify-spa'
 T = os.path.join(ROOT, 'public', 'templates')
 TH = os.path.join(ROOT, 'public', 'thumbs')
 IND, PFX = 'moto', 'MOT'
-LABEL = '전기 이륜차 · 바이크'
+LABEL = '오토바이 · 스쿠터'
 LETTERS = 'abcde'
 DESIGNS = {
     'a': ('스플릿 라이트', '밝은 배경에 제품 누끼를 크게 세운 스플릿 히어로, 알약 버튼과 둥근 카드, 지그재그 제품 배치로 전기 스쿠터 판매 · 정비 매장의 상담 문의를 만드는 5페이지 템플릿입니다.',

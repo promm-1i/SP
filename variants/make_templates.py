@@ -242,8 +242,8 @@ def convert_html(name, s, letter, assets):
     s = re.sub(r'<meta property="og:image:width"[^>]*><meta property="og:image:height"[^>]*>\n?', '', s)
     # 제목
     if name == 'index.html':
-        s = re.sub(r'<title>.*?</title>', f'<title>볼트라이드 — 전기 이륜차 · 바이크 홈페이지 템플릿 (디자인 {L} · {CONCEPT[ord(letter)-96]})</title>', s, count=1)
-        s = s.replace('<meta property="og:title" content="에스피모빌리티 | 전기 이륜차 캄페온">', f'<meta property="og:title" content="볼트라이드 — 전기 이륜차 · 바이크 홈페이지 템플릿 (디자인 {L})">')
+        s = re.sub(r'<title>.*?</title>', f'<title>볼트라이드 — 오토바이 · 스쿠터 홈페이지 템플릿 (디자인 {L} · {CONCEPT[ord(letter)-96]})</title>', s, count=1)
+        s = s.replace('<meta property="og:title" content="에스피모빌리티 | 전기 이륜차 캄페온">', f'<meta property="og:title" content="볼트라이드 — 오토바이 · 스쿠터 홈페이지 템플릿 (디자인 {L})">')
     # 영상 슬롯 제거
     s = re.sub(r'\s*<video class="bg vid"[^>]*></video>', '', s)
     s = s.replace(' data-video="./assets/video/product-360.mp4"', '')
