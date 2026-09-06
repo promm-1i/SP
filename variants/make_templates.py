@@ -60,8 +60,8 @@ REPL = [
     # 회사 · 사업자
     ('주식회사 에스피모빌리티', '주식회사 볼트라이드'), ('㈜에스피모빌리티', '볼트라이드'), ('에스피모빌리티', '볼트라이드'),
     ('SP MOBILITY', 'VOLTRIDE'), ('SP Mobility', 'Voltride'),
-    ('info.spmobility@gmail.com', 'hello@voltride.kr'), ('1661-5958', '1588-0000'),
-    ('대표 안성섭', '대표 이준혁'), ('<dd>안성섭</dd>', '<dd>이준혁</dd>'), ('716-86-03649', '123-45-67890'), ('2024년 8월', '2021년 3월'),
+    ('info.spmobility@gmail.com', '6gsmake@gmail.com'), ('1661-5958', '010-4894-4905'),
+    ('대표 안성섭', '대표 (예시)'), ('<div><dt>대표</dt><dd>안성섭</dd></div>', ''), ('716-86-03649', '123-45-67890'), ('2024년 8월', '2021년 3월'),
     ('충청남도 아산시 둔포면 봉신로230번길 42, 2층', '서울특별시 성동구 성수이로 00, 1층'), ('충남 아산시 둔포면 봉신로230번길 42, 2층', '서울 성동구 성수이로 00, 1층'),
     ('전기오토바이 · 전기충전기 · 전기배터리 · 소프트웨어 개발', '전기 이륜차 판매 · 정비 · 배터리 케어 · 리스 렌탈'),
     # 회사소개 문단
@@ -163,7 +163,7 @@ REPL = [
     ('캄페온', '에어로 S1'), ('CAMPEON', 'AERO S1'), ('Campeon', 'Aero S1'),
     ('전기 이륜차', '전기 스쿠터'),
 ]
-LEFTOVER = re.compile(r'캄페온|CAMPEON|Campeon|에스피|SP MOBILITY|SP Mobility|spmobility|OBC|198\.2|195\.1|CATL|77\.7|1661|봉신로|안성섭|716-86|환경부|Eco Value|E\.V |E-Mobility|소형B|On Board|15만|아산시|LMFP|탄소배출권')
+LEFTOVER = re.compile(r'1588-0000|hello@voltride|이준혁|123-45-67890|캄페온|CAMPEON|Campeon|에스피|SP MOBILITY|SP Mobility|spmobility|OBC|198\.2|195\.1|CATL|77\.7|1661|봉신로|안성섭|716-86|환경부|Eco Value|E\.V |E-Mobility|소형B|On Board|15만|아산시|LMFP|탄소배출권')
 
 DEALERS_JS = '''/* 협력점 데이터 — 여기에만 추가하면 고객지원 페이지의 목록과 지도에 함께 표시됩니다.
  *   region : 서울 | 인천 | 경기 | 강원 | 충청 | 전라 | 경상 | 제주   (지역 필터 버튼과 같은 값)
@@ -173,10 +173,10 @@ DEALERS_JS = '''/* 협력점 데이터 — 여기에만 추가하면 고객지�
 window.KAKAO_APP_KEY = "";
 
 window.DEALERS = [
-  { name: "볼트라이드 성수 본점", region: "서울", type: "hq", addr: "서울 성동구 성수이로 00, 1층", tel: "1588-0000", lat: 37.5445, lng: 127.0560 },
-  { name: "볼트라이드 수원 정비센터", region: "경기", type: "dealer", addr: "경기 수원시 팔달구 매산로 00", tel: "031-000-0000", lat: 37.2660, lng: 127.0010 },
-  { name: "부산 해운대 협력점", region: "경상", type: "dealer", addr: "부산 해운대구 해운대로 000", tel: "051-000-0000", lat: 35.1631, lng: 129.1636 },
-  { name: "대전 유성 협력점", region: "충청", type: "dealer", addr: "대전 유성구 대학로 00", tel: "042-000-0000", lat: 36.3620, lng: 127.3560 }
+  { name: "볼트라이드 성수 본점", region: "서울", type: "hq", addr: "서울 성동구 성수이로 00, 1층", tel: "010-4894-4905", lat: 37.5445, lng: 127.0560 },
+  { name: "볼트라이드 수원 정비센터", region: "경기", type: "dealer", addr: "경기 수원시 팔달구 매산로 00", tel: "010-4894-4905", lat: 37.2660, lng: 127.0010 },
+  { name: "부산 해운대 협력점", region: "경상", type: "dealer", addr: "부산 해운대구 해운대로 000", tel: "010-4894-4905", lat: 35.1631, lng: 129.1636 },
+  { name: "대전 유성 협력점", region: "충청", type: "dealer", addr: "대전 유성구 대학로 00", tel: "010-4894-4905", lat: 36.3620, lng: 127.3560 }
 ];
 '''
 
@@ -267,6 +267,8 @@ def convert_html(name, s, letter, assets):
     s = s.replace('<img src="./assets/img/logo-sp-white.png" alt="SP MOBILITY">', f'<img src="{assets}logo-white.svg" alt="VOLTRIDE">')
     if '<header class="hdr dark' in s:
         s = s.replace(f'aria-label="SP Mobility 홈"><img src="{assets}logo.svg"', f'aria-label="SP Mobility 홈"><img src="{assets}logo-white.svg"')
+    # 푸터 사업자 정보: 상호는 가상, 등록번호·연락처는 민트클(제작사) 것 + 데모 고지
+    s = re.sub(r'<div class="legal">.*?</div>', '<div class="legal"><span>상호 볼트라이드 (예시)</span><span>대표번호 010-4894-4905</span><span>이메일 6gsmake@gmail.com</span><span class="c">이 페이지는 NOVERIQ가 제작한 홈페이지 템플릿 데모입니다. 위 상호 · 주소는 예시입니다. 제작 문의 010-4894-4905 · 6gsmake@gmail.com · 민트클 · 사업자등록번호 266-07-03678 · 통신판매업신고 제2026-서울강남-00480호 · © 2026 NOVERIQ. All rights reserved.</span></div>', s, flags=re.S)
     # 문구
     s = neutral(s)
     # 이미지 경로
