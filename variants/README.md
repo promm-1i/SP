@@ -17,3 +17,12 @@
 - `patch.py` — 서브페이지 HTML 치환(헤더 클래스, 히어로 구조 등). 없어도 됨
 
 캡처 검증: `python variants/shot.py <폴더> <태그> [페이지] --w=1440|390 --full` (Playwright, channel=chrome)
+
+## 템플릿 전환 (moto-a ~ e, 2026-09-06)
+
+시안 5종을 중립 브랜드 **볼트라이드 / 모델 에어로 S1** 로 바꿔 mintcl 템플릿으로 찍어낸다. 고객 사진·문구·사업자 정보는 전부 치환된다.
+
+- `python variants/make_templates.py` → `mintcl-netlify-spa/public/templates/moto-a~e` (랜딩형) + `moto-a~e-basic` (기본형, 애니메이션 제거). 사진은 `moto-a/assets/img/` 한 곳, 나머지 9개 폴더는 상대경로 참조.
+- 사진이 없으면 슬롯 크기 플레이스홀더를 만든다. 실제 사진 발주표: `C:/web-project/템플릿_이미지프롬프트_moto.md`
+- 사진 설치 후: `make_cutouts.py`(누끼 2장) → `reg_moto.py`(썸네일·섹션 캡처·samples.ts·업종 메뉴·sitemap 등록)
+- 잔여 문구 검사는 생성기가 자동으로 한다(`[잔여 문구]` 출력이 없어야 정상).
