@@ -15,7 +15,8 @@ for src, dst, box in JOBS:
     bbox = out.getbbox()
     if bbox:
         out = out.crop(bbox)
-    out.thumbnail(box, Image.LANCZOS)
+    k = min(box[0] / out.width, box[1] / out.height) * 0.96  # 확대 포함해 캔버스에 맞춤
+    out = out.resize((int(out.width * k), int(out.height * k)), Image.LANCZOS)
     canvas = Image.new('RGBA', box, (0, 0, 0, 0))
     canvas.paste(out, ((box[0] - out.width) // 2, box[1] - out.height), out)  # 바닥 정렬
     canvas.save(os.path.join(IMG, dst))

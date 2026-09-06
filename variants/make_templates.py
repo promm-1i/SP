@@ -332,15 +332,19 @@ def build(n):
     letter = LETTERS[n]; vdir = os.path.join(VAR, f'v{n}')
     land = os.path.join(OUT, f'{IND}-{letter}'); basic = land + '-basic'
     assets = './assets/img/' if letter == 'a' else '../moto-a/assets/img/'
+    # 설치된 사진은 보존한다 (moto-a/assets/img 를 옆으로 옮겼다가 되돌림)
+    keep_tmp = None
+    if letter == 'a' and os.path.isdir(os.path.join(land, 'assets', 'img')):
+        keep_tmp = os.path.join(OUT, '_moto_img_tmp'); rmtree(keep_tmp)
+        shutil.move(os.path.join(land, 'assets', 'img'), keep_tmp)
     for d in (land, basic):
         rmtree(d); os.makedirs(os.path.join(d, 'assets'), exist_ok=True)
         open(os.path.join(d, 'favicon.svg'), 'w', encoding='utf-8').write(FAVICON)
     if letter == 'a':
         imgdir = os.path.join(land, 'assets', 'img')
         # 이미 설치된 사진이 있으면 보존: 기존 폴더에서 가져온다
-        keep = os.path.join(OUT, '_moto_img_keep')
-        if os.path.isdir(keep):
-            shutil.copytree(keep, imgdir)
+        if keep_tmp:
+            shutil.move(keep_tmp, imgdir)
         else:
             os.makedirs(imgdir, exist_ok=True)
         open(os.path.join(imgdir, 'logo.svg'), 'w', encoding='utf-8').write(LOGO.format(c='#0B1B2B'))
