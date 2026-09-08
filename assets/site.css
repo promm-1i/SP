@@ -200,6 +200,13 @@ body.nav-open .mnav{display:flex}
 .ecard h3{font-size:22px;position:relative}
 .ecard ul{margin-top:14px;position:relative}
 .ecard li{font-size:15px;color:var(--w70);padding:6px 0;border-top:1px solid var(--w20)}
+.grid4.chain{position:relative}
+.grid4.chain::after{content:"";position:absolute;left:32px;right:32px;top:41px;height:1px;background:linear-gradient(90deg,var(--blue) 0,rgba(20,112,168,.55) 100%);z-index:2;pointer-events:none}
+.chain .cloop{position:absolute;right:26px;top:31px;width:20px;height:20px;color:var(--blue);filter:brightness(1.6);z-index:3;background:var(--navy);padding:2px}
+.chain .ecard .n{position:relative;z-index:3;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--navy);padding-right:12px;line-height:18px}
+.chain .ecard .n::before{content:"";width:8px;height:8px;border-radius:50%;border:1px solid currentColor;background:var(--navy);box-shadow:0 0 0 3px var(--navy)}
+.ecard .big{position:absolute;right:20px;top:60px;font-size:150px;font-weight:200;line-height:1;letter-spacing:-.05em;color:rgba(255,255,255,.06);pointer-events:none;user-select:none}
+@media (max-width:1023px){.grid4.chain::after,.chain .cloop{display:none}.ecard .big{font-size:120px;top:48px}}
 
 /* faq */
 .faq{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
