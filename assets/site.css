@@ -254,19 +254,22 @@ body.nav-open .mnav{display:flex}
 .pricebox p{margin-top:10px;font-size:16px;color:var(--muted);max-width:620px}
 .pricebox .acts{display:flex;gap:12px;flex-wrap:wrap}
 .note{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:16px}
-.ctable{border-top:1px solid var(--navy)}
-.ctable table{width:100%;border-collapse:collapse}
-.ctable th,.ctable td{padding:18px 16px;border-bottom:1px solid var(--line);text-align:right;font-size:17px;white-space:nowrap}
-.ctable th{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:none;color:var(--muted);font-weight:400;padding-top:14px;padding-bottom:14px}
-.ctable th:first-child,.ctable td:first-child{text-align:left;padding-left:0}
-.ctable th:last-child,.ctable td:last-child{padding-right:0}
-.ctable td:last-child{font-weight:500;color:var(--navy)}
-.ctable td small{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:6px}
-.ctable .diff td{background:var(--blue-20);font-weight:500}
-.ctable .diff td:first-child{padding-left:16px}.ctable .diff td:last-child{padding-right:16px}
+.ctable{border-top:2px solid var(--navy)}
+.ctable table{width:100%;border-collapse:collapse;table-layout:fixed}
+.ctable th,.ctable td{padding:18px 20px;text-align:right;white-space:nowrap}
+.ctable th{background:var(--bg2);font-size:14px;font-weight:600;color:var(--navy);padding:14px 20px;border-bottom:1px solid var(--line)}
+.ctable td{font-size:19px;border-bottom:1px solid var(--line);color:var(--text)}
+.ctable tbody tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+.ctable th:first-child,.ctable td:first-child{text-align:left;font-weight:600;color:var(--navy)}
+.ctable td:last-child{font-weight:700;color:var(--blue);font-size:21px}
+.ctable td small{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted);margin-left:8px}
+.ctable .diff td{background:var(--blue-20)!important;font-weight:700;color:var(--navy);border-bottom:0}
+.ctable .diff td:last-child{color:var(--blue)}
+.ctable .bar{display:inline-block;vertical-align:middle;width:min(260px,55%);height:10px;background:rgba(0,0,0,.08);margin-right:16px;position:relative;overflow:hidden;border-radius:2px}
+.ctable .bar i{position:absolute;top:0;left:0;bottom:0;width:var(--p);background:var(--blue)}
 .ctable .warn{margin-top:20px;padding:16px 20px;background:var(--blue-20);font-size:14px;line-height:1.6;color:var(--navy)}
 .ctable .warn b{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-right:10px;color:var(--blue)}
-@media (max-width:767px){.ctable th,.ctable td{padding:14px 10px;font-size:14px;white-space:normal}.ctable td small{display:block;margin:2px 0 0}.ctable.charge th:nth-child(4),.ctable.charge td:nth-child(4){display:none}.ctable .warn{padding:14px 16px;font-size:13px}}
+@media (max-width:767px){.ctable table{table-layout:auto}.ctable th,.ctable td{padding:12px 6px;white-space:normal}.ctable.charge td:not(:first-child){white-space:nowrap}.ctable th{font-size:12px}.ctable td{font-size:14px}.ctable td:last-child{font-size:15px}.ctable td small{display:block;margin:2px 0 0}.ctable.charge th:nth-child(4),.ctable.charge td:nth-child(4){display:none}.ctable .bar{width:64px;height:8px;margin-right:8px}.ctable .warn{padding:14px 16px;font-size:13px}}
 .usp{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .usp div{border-top:2px solid var(--navy);padding-top:20px}
 .usp b{display:block;font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1}

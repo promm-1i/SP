@@ -140,6 +140,7 @@
   </div>
   <div class="ctable charge rv">
   <table>
+    <colgroup><col style="width:30%"><col style="width:15%"><col style="width:19%"><col style="width:18%"><col style="width:18%"></colgroup>
     <thead><tr><th>충전 방식</th><th>1kWh 요금</th><th>예상 전력사용량</th><th>완충 시간 (0~100%)</th><th>150km 주행 시 충전비</th></tr></thead>
     <tbody>
       <tr><td>일반 220V 가정용 충전 <small>3.5kW</small></td><td>130원</td><td>약 10.6kWh</td><td>약 4시간</td><td>약 1,380원</td></tr>
@@ -179,14 +180,15 @@
       <div class="rv"><p class="eyebrow">Battery</p><h2>주행거리에 따른<br><span class="b">배터리 소모량</span></h2></div>
       <div class="r rv" style="--d:.1s"><p>Sport 모드로 하루 150km를 달려도 약 23%가 남습니다.<br>배달 동선을 기준으로 충전 계획을 세울 수 있습니다.</p></div>
     </div>
-    <div class="ctable rv">
+    <div class="ctable battery rv">
   <table>
+    <colgroup><col style="width:22%"><col style="width:52%"><col style="width:26%"></colgroup>
     <thead><tr><th>하루 주행거리</th><th>배터리 예상 사용률</th><th>예상 잔량</th></tr></thead>
     <tbody>
-      <tr><td>100km</td><td>약 51%</td><td>약 49%</td></tr>
-      <tr><td>120km</td><td>약 62%</td><td>약 38%</td></tr>
-      <tr><td>150km</td><td>약 77%</td><td>약 23%</td></tr>
-      <tr><td>180km</td><td>약 92%</td><td>약 8%</td></tr>
+      <tr><td>100km</td><td><span class="bar"><i style="--p:51%"></i></span>약 51%</td><td>약 49%</td></tr>
+      <tr><td>120km</td><td><span class="bar"><i style="--p:62%"></i></span>약 62%</td><td>약 38%</td></tr>
+      <tr><td>150km</td><td><span class="bar"><i style="--p:77%"></i></span>약 77%</td><td>약 23%</td></tr>
+      <tr><td>180km</td><td><span class="bar"><i style="--p:92%"></i></span>약 92%</td><td>약 8%</td></tr>
     </tbody>
   </table>
   <p class="note">※ Sport 모드 기준 예상치. 적재량 · 기온 · 주행 습관에 따라 달라질 수 있습니다.</p>
