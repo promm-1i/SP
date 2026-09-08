@@ -196,8 +196,8 @@ body.nav-open .mnav{display:flex}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .ecard{background:var(--navy);color:#fff;padding:32px;min-height:380px;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .ecard::before{content:"";position:absolute;inset:auto -30% -40% auto;width:80%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(20,112,168,.45),transparent 70%)}
-.ecard .n{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--blue);filter:brightness(1.6);margin-bottom:auto}
-.ecard h3{font-size:22px;position:relative}
+.ecard .n{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--blue);filter:brightness(1.6);margin-bottom:0}
+.ecard h3{font-size:22px;position:relative;margin-top:160px}
 .ecard ul{margin-top:14px;position:relative}
 .ecard li{font-size:15px;color:var(--w70);padding:6px 0;border-top:1px solid var(--w20)}
 .grid4.chain{position:relative}
