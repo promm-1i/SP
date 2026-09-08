@@ -260,6 +260,9 @@ body.nav-open .mnav{display:flex}
 .ctable th{background:var(--bg2);font-size:14px;font-weight:600;color:var(--navy);padding:14px 20px;border-bottom:1px solid var(--line)}
 .ctable td{font-size:19px;border-bottom:1px solid var(--line);color:var(--text)}
 .ctable tbody tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+.ctable td{transition:background .2s}
+.ctable tbody tr:not(.diff):hover td{background:rgba(20,112,168,.06)}
+.ctable tbody tr.diff:hover td{background:rgba(20,112,168,.28)!important}
 .ctable th:first-child,.ctable td:first-child{text-align:left;font-weight:600;color:var(--navy)}
 .ctable td:last-child{font-weight:700;color:var(--blue);font-size:21px}
 .ctable td small{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted);margin-left:8px}
