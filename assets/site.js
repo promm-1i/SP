@@ -40,23 +40,29 @@
   var buildGallery = function () {
     var slides = [].filter.call(gmain.children, function (c) { return c.matches('.spin, img, video'); }), thumbs = document.querySelectorAll('.thumbs button'), gi = 0;
     var gnum = gmain.querySelector('.gnum'), gcap = gmain.querySelector('.gcap');
-    var go = function (i) {
+    var load = function (k) { var s = slides[(k + slides.length) % slides.length]; if (s && s.dataset && s.dataset.src) { s.src = s.dataset.src; s.removeAttribute('data-src'); } };
+    var go = function (i, user) {
       gi = (i + slides.length) % slides.length;
+      load(gi); load(gi + 1); if (user) load(gi - 1);
       slides.forEach(function (s, k) { s.classList.toggle('on', k === gi); }); thumbs.forEach(function (x, k) { x.classList.toggle('on', k === gi); });
       if (gnum) gnum.textContent = (gi + 1) + ' / ' + slides.length; if (gcap) gcap.textContent = slides[gi].dataset.cap || '';
       if (thumbs[gi]) thumbs[gi].scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
     };
-    thumbs.forEach(function (t, i) { t.addEventListener('click', function () { go(i); }); });
-    gmain.querySelectorAll('[data-g]').forEach(function (b) { b.addEventListener('click', function () { go(gi + +b.dataset.g); }); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(gi + 1); if (e.key === 'ArrowLeft') go(gi - 1); });
+    thumbs.forEach(function (t, i) { t.addEventListener('click', function () { go(i, 1); }); });
+    gmain.querySelectorAll('[data-g]').forEach(function (b) { b.addEventListener('click', function () { go(gi + +b.dataset.g, 1); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') go(gi + 1, 1); if (e.key === 'ArrowLeft') go(gi - 1, 1); });
     var tx = 0; gmain.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
-    gmain.addEventListener('touchend', function (e) { if (gi === 0) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) go(gi + (dx < 0 ? 1 : -1)); }, { passive: true });
+    gmain.addEventListener('touchend', function (e) { if (gi === 0) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) go(gi + (dx < 0 ? 1 : -1), 1); }, { passive: true });
     var qi = document.querySelector('.qty input');
     document.querySelectorAll('.qty button').forEach(function (b) { b.addEventListener('click', function () { qi.value = Math.max(1, Math.min(99, (+qi.value || 1) + (+b.dataset.d))); }); });
     var tabs = document.querySelectorAll('.ptabs a'), secs = [].map.call(tabs, function (a) { return document.querySelector(a.getAttribute('href')); });
     var spy = function () { var y = window.scrollY + 170, cur = 0; secs.forEach(function (s, i) { if (s && s.offsetTop <= y) cur = i; }); tabs.forEach(function (a, i) { a.classList.toggle('on', i === cur); }); };
     window.addEventListener('scroll', spy, { passive: true }); spy();
     go(0);
+    // 나머지 사진은 첫 화면 로딩이 끝난 뒤 천천히 받아 둔다
+    var rest = function () { slides.forEach(function (_, k) { setTimeout(function () { load(k); }, k * 250); }); };
+    var restLater = function () { if (window.requestIdleCallback) requestIdleCallback(rest, { timeout: 4000 }); else setTimeout(rest, 2000); };
+    if (document.readyState === 'complete') restLater(); else window.addEventListener('load', restLater, { once: true });
   };
   if (gmain) { buildGallery(); window.addEventListener('gallery:rebuild', buildGallery); }
 
