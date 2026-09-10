@@ -261,7 +261,7 @@ body.nav-open .mnav{display:flex}
 .pricebox p{margin-top:10px;font-size:16px;color:var(--muted);max-width:620px}
 .pricebox .acts{display:flex;gap:12px;flex-wrap:wrap}
 .note{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:16px}
-.ctable{border-top:2px solid var(--navy)}
+.ctable{border-top:2px solid var(--navy);overflow-x:auto}
 .ctable table{width:100%;border-collapse:collapse;table-layout:fixed}
 .ctable th,.ctable td{padding:18px 20px;text-align:right;white-space:nowrap}
 .ctable th{background:var(--bg2);font-size:18px;font-weight:600;color:var(--navy);padding:14px 20px;border-bottom:1px solid var(--line)}
@@ -279,6 +279,7 @@ body.nav-open .mnav{display:flex}
 .ctable .bar i{position:absolute;top:0;left:0;bottom:0;width:var(--p);background:var(--blue)}
 .ctable .warn{margin-top:20px;padding:16px 20px;background:var(--blue-20);font-size:14px;line-height:1.6;color:var(--navy)}
 .ctable .warn b{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-right:10px;color:var(--blue)}
+@media (min-width:768px) and (max-width:1023px){.ctable th,.ctable td{padding:14px 10px}.ctable th{font-size:14px;white-space:normal}.ctable td{font-size:14px}}
 @media (max-width:767px){.ctable table{table-layout:auto}.ctable col{width:auto!important}.ctable th,.ctable td{padding:12px 6px;white-space:normal}.ctable.charge td:not(:first-child){white-space:nowrap}.ctable th{font-size:14px}.ctable td{font-size:13px}.ctable td small{display:block;margin:2px 0 0}.ctable.charge th:nth-child(4),.ctable.charge td:nth-child(4){display:none}.ctable .bar{width:64px;height:8px;margin-right:8px}.ctable .warn{padding:14px 16px;font-size:13px}}
 .usp{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .usp div{border-top:2px solid var(--navy);padding-top:20px}
