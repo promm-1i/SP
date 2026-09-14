@@ -424,7 +424,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
   .ucard{height:260px}
 }
 @media (max-width:639px){
-  .ptabs .in{justify-content:space-between;gap:0}.ptabs a{padding:16px 0;font-size:15px}
   .cview{grid-template-columns:1fr;padding:12px}.cview .cf{display:none}.cpick{grid-template-columns:1fr}.cpick button{justify-content:flex-start}
   h1{font-size:42px}h2{font-size:32px}h3{font-size:20px}
   .hero h1{font-size:38px}
@@ -674,7 +673,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
   .feat article{grid-template-columns:1fr;gap:24px}.feat article:nth-child(even) .txt{order:0}
   .guide{grid-template-columns:1fr}
   .qna{grid-template-columns:1fr;padding:32px 24px}
-}
+}@media (max-width:639px){.ptabs .in{justify-content:space-between;gap:0}.ptabs a{padding:16px 0;font-size:15px}}
+
 @media (max-width:639px){.thumbs button{flex-basis:calc((100% - 32px) / 5)}.gnav{opacity:1;width:36px;height:36px}.buyers{grid-template-columns:1fr}.acts .row{grid-template-columns:1fr}.feat .txt h3{font-size:26px}}
 
 /* kakao map overlays */
