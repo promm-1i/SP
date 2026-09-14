@@ -298,6 +298,7 @@ body.nav-open .mnav{display:flex}
 .bbox li span:first-child{color:var(--w70);flex:none}
 .bbox li span:last-child{text-align:right}
 .bbox .fnote{color:var(--w70)}
+.bbox .dl{margin-top:24px}
 .ctable .warn{margin-top:20px;padding:16px 20px;background:var(--blue-20);font-size:14px;line-height:1.6;color:var(--navy)}
 .ctable .warn b{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-right:10px;color:var(--blue)}
 @media (min-width:768px) and (max-width:1023px){.ctable th,.ctable td{padding:14px 10px}.ctable th{font-size:14px;white-space:normal}.ctable td{font-size:14px}}
