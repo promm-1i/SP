@@ -298,7 +298,14 @@ body.nav-open .mnav{display:flex}
 .bbox li span:first-child{color:var(--w70);flex:none}
 .bbox li span:last-child{text-align:right}
 .bbox .fnote{color:var(--w70)}
-.bbox .dl{margin-top:24px}
+.dlcard{margin:20px 0 8px;padding:22px 24px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.dlcard .k{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);filter:brightness(1.6)}
+.dlcard b{display:block;margin-top:6px;font-size:20px;font-weight:500}
+.dlcard span{display:block;margin-top:6px;font-size:15px;line-height:1.5;color:var(--w70)}
+.dlcard .btn{flex:none;height:56px;padding-left:24px;font-size:15px}
+.dlcard .btn .ar{width:44px;height:44px;font-size:18px}
+.buy .dlink{display:inline-block;margin-top:16px;font-size:15px;font-weight:500;color:var(--navy);border-bottom:1px solid var(--navy);padding-bottom:2px}
+.buy .dlink:hover{color:var(--blue);border-color:var(--blue)}
 .ctable .warn{margin-top:20px;padding:16px 20px;background:var(--blue-20);font-size:14px;line-height:1.6;color:var(--navy)}
 .ctable .warn b{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-right:10px;color:var(--blue)}
 @media (min-width:768px) and (max-width:1023px){.ctable th,.ctable td{padding:14px 10px}.ctable th{font-size:14px;white-space:normal}.ctable td{font-size:14px}}
@@ -674,7 +681,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
   .feat article{grid-template-columns:1fr;gap:24px}.feat article:nth-child(even) .txt{order:0}
   .guide{grid-template-columns:1fr}
   .qna{grid-template-columns:1fr;padding:32px 24px}
-}@media (max-width:639px){.ptabs .in{justify-content:space-between;gap:0}.ptabs a{padding:16px 0;font-size:15px}}
+}@media (max-width:639px){.ptabs .in{justify-content:space-between;gap:0}.ptabs a{padding:16px 0;font-size:15px}.dlcard{flex-direction:column;align-items:stretch;padding:18px}.dlcard .btn{justify-content:space-between}}
 
 @media (max-width:639px){.thumbs button{flex-basis:calc((100% - 32px) / 5)}.gnav{opacity:1;width:36px;height:36px}.buyers{grid-template-columns:1fr}.acts .row{grid-template-columns:1fr}.feat .txt h3{font-size:26px}}
 
