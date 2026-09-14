@@ -66,6 +66,21 @@
   };
   if (gmain) { buildGallery(); window.addEventListener('gallery:rebuild', buildGallery); }
 
+  // product: color picker (swatch <-> buy panel select)
+  var cpick = document.querySelector('.cpick');
+  if (cpick) {
+    var cside = document.querySelector('.cview .cs'), cfront = document.querySelector('.cview .cf'), csel = document.getElementById('p-color');
+    var cnames = { white: '화이트', grey: '다크 그레이', black: '무광 블랙' };
+    var pick = function (c) {
+      cpick.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.c === c); });
+      cside.src = './assets/img/colors/campeon-' + c + '-side.jpg'; cside.alt = '캄페온 ' + cnames[c] + ' 측면';
+      cfront.src = './assets/img/colors/campeon-' + c + '-front.jpg'; cfront.alt = '캄페온 ' + cnames[c] + ' 정면';
+      if (csel && csel.value !== cnames[c]) csel.value = cnames[c];
+    };
+    cpick.querySelectorAll('button').forEach(function (b) { b.addEventListener('click', function () { pick(b.dataset.c); }); });
+    if (csel) csel.addEventListener('change', function () { for (var k in cnames) if (cnames[k] === csel.value) pick(k); });
+  }
+
   // hero video: only fetch when the file exists (HEAD), then fade in over the photo
   var hv = document.querySelector('.hero video.bg');
   if (hv && location.protocol !== 'file:') {
