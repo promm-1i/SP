@@ -424,6 +424,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
   .ucard{height:260px}
 }
 @media (max-width:639px){
+  .ptabs .in{justify-content:space-between;gap:0}.ptabs a{padding:16px 0;font-size:15px}
   .cview{grid-template-columns:1fr;padding:12px}.cview .cf{display:none}.cpick{grid-template-columns:1fr}.cpick button{justify-content:flex-start}
   h1{font-size:42px}h2{font-size:32px}h3{font-size:20px}
   .hero h1{font-size:38px}
