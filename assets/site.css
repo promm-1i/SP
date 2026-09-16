@@ -255,7 +255,7 @@ body.nav-open .mnav{display:flex}
 .gal img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--navy)}
 .spect{display:grid;grid-template-columns:repeat(3,1fr);column-gap:48px;border-top:1px solid var(--line)}
 .spect div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
-.spect dt{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.spect dt{flex:none;max-width:55%;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .spect dd{font-size:19px;font-weight:500;text-align:right}
 .pricebox{background:var(--bg2);border:1px solid var(--line);padding:40px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
 .pricebox h3{font-size:22px}
