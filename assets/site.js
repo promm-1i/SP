@@ -46,7 +46,8 @@
       load(gi); load(gi + 1); if (user) load(gi - 1);
       slides.forEach(function (s, k) { s.classList.toggle('on', k === gi); }); thumbs.forEach(function (x, k) { x.classList.toggle('on', k === gi); });
       if (gnum) gnum.textContent = (gi + 1) + ' / ' + slides.length; if (gcap) gcap.textContent = slides[gi].dataset.cap || '';
-      if (thumbs[gi]) thumbs[gi].scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      // 썸네일 줄만 가로로 맞춘다 (scrollIntoView 는 iOS 에서 페이지까지 세로로 튀게 해서 쓰지 않음). 첫 로딩(go(0))에는 움직이지 않는다.
+      if (user && thumbs[gi]) { var th = thumbs[gi].parentElement, tb = thumbs[gi].getBoundingClientRect(), tr = th.getBoundingClientRect(); th.scrollTo({ left: th.scrollLeft + (tb.left - tr.left) - (tr.width - tb.width) / 2, behavior: 'smooth' }); }
     };
     thumbs.forEach(function (t, i) { t.addEventListener('click', function () { go(i, 1); }); });
     gmain.querySelectorAll('[data-g]').forEach(function (b) { b.addEventListener('click', function () { go(gi + +b.dataset.g, 1); }); });
