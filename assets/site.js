@@ -12,6 +12,11 @@
   // mobile nav
   var btn = document.querySelector('.hdr .menu');
   if (btn) btn.addEventListener('click', function () { document.body.classList.toggle('nav-open'); });
+  // 같은 쪽 안의 #앵커로 갈 때는 문서가 다시 뜨지 않아 메뉴가 열린 채 남는다 — 링크를 누르면 닫는다
+  var mnav = document.querySelector('.mnav');
+  if (mnav) mnav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) document.body.classList.remove('nav-open');
+  });
 
   // current nav highlight
   var here = location.pathname.split('/').pop() || 'index.html';
