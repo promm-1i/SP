@@ -507,7 +507,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
 .cform .f:focus-within{border-color:var(--navy);box-shadow:0 0 0 3px var(--blue-20)}
 .cform .f label{position:absolute;left:16px;top:20px;font-size:16px;color:var(--muted);pointer-events:none;transition:all .2s var(--ease);transform-origin:left top}
 .cform .f .req{color:var(--blue)}
-.cform .f input,.cform .f select,.cform .f textarea{border:0;height:44px;padding:8px 0 10px;background:transparent;font-size:17px;color:var(--navy);caret-color:var(--blue)}
+.cform .f input,.cform .f select,.cform .f textarea{border:0;height:44px;padding:8px 0 10px;background-color:transparent;font-size:17px;color:var(--navy);caret-color:var(--blue)}
 .cform .f select{padding-right:32px;background-position:right 2px center}
 .cform .f textarea{height:120px;padding-top:10px;resize:vertical}
 .cform .f input:focus~label,.cform .f input:not(:placeholder-shown)~label,.cform .f select:focus~label,.cform .f select.has~label,.cform .f textarea:focus~label,.cform .f textarea:not(:placeholder-shown)~label{top:6px;font-size:11px;letter-spacing:.02em;color:var(--blue)}
