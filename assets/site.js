@@ -35,10 +35,6 @@
     });
   });
 
-  // consult: floating labels for selects
-  document.querySelectorAll('.cform select').forEach(function (sel) {
-    var sync = function () { sel.classList.toggle('has', !!sel.value); }; sel.addEventListener('change', sync); sync();
-  });
 
   // product: gallery thumbs, quantity, tab scrollspy
   var gmain = document.querySelector('.gmain');
