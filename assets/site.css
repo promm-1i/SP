@@ -239,7 +239,7 @@ body.nav-open .mnav{display:flex}
 .foot .col h4{font-family:var(--mono);font-size:16px;font-weight:400;letter-spacing:0;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
 .foot .col a,.foot .col span{display:block;font-family:var(--mono);font-size:14px;letter-spacing:0;line-height:1.4;margin-bottom:12px;color:#fff}
 .foot .col a:hover{color:var(--w70)}
-.foot .gmark{margin-top:72px;font-size:236px;font-weight:800;letter-spacing:-.05em;line-height:.85;color:rgba(255,255,255,.055);white-space:nowrap;overflow:hidden;user-select:none}
+.foot .gmark{margin-top:72px;font-size:min(calc((100vw - 80px)/6.1),223px);font-weight:800;letter-spacing:-.05em;line-height:.85;color:rgba(255,255,255,.055);white-space:nowrap;overflow:hidden;user-select:none}
 .foot .legal{margin-top:36px;padding-top:24px;border-top:1px solid var(--w20);display:flex;flex-wrap:wrap;gap:8px 24px;font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--w70)}
 .foot .legal .c{width:100%;margin-top:8px}
 
@@ -428,7 +428,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
   .spect{grid-template-columns:1fr}
   .pricebox,.notice{grid-template-columns:1fr;padding:28px}
   .ftop{grid-template-columns:1fr 1fr;gap:36px}
-  .foot .gmark{font-size:96px;margin-top:48px}
+  .foot .gmark{font-size:min(96px,calc((100vw - 80px)/6.1));margin-top:48px}
   .side{position:static}
   .toolbar{flex-direction:column;align-items:stretch}
   .search{width:100%}
@@ -444,7 +444,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue)}
   .grid6,.grid4,.specs,.dealers,.usp,.row2,.radios,.exp,.ftop{grid-template-columns:1fr}
   .hero .stats{grid-template-columns:1fr}
   .phero h1{font-size:34px}
-  .foot .gmark{font-size:15.5vw}
+  .foot .gmark{font-size:calc((100vw - 80px)/6.1)}
   .scard .t{max-width:none;right:24px;left:24px;top:24px}
   .scard .t h3{font-size:26px}
   .scard .go{left:24px;bottom:24px}

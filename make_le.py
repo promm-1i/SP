@@ -54,13 +54,13 @@ for name in ('logo-sp.png', 'logo-sp-white.png'):
     if os.path.exists(p):
         os.remove(p)
 
-# 푸터 대형 워터마크: "LUX ELECTRA" 가 "SP MOBILITY" 보다 7.5% 넓어 글자가 잘린다.
-# 같은 비율(컨테이너 대비 1407px)로 보이도록 글자 크기만 0.93배 줄인다.
+# 푸터 대형 워터마크: "LUX ELECTRA" 가 "SP MOBILITY" 보다 7.5% 넓다.
+# 폭에 맞춰 줄어드는 식은 SP 쪽에 있고, 여기서는 나눗수·상한만 LE 글자폭으로 바꾼다.
 css = os.path.join(DST, 'assets', 'site.css')
 s = open(css, encoding='utf-8').read()
-for a, b in (('.foot .gmark{margin-top:72px;font-size:236px;', '.foot .gmark{margin-top:72px;font-size:219px;'),
-             ('.foot .gmark{font-size:96px;margin-top:48px}', '.foot .gmark{font-size:89px;margin-top:48px}'),
-             ('.foot .gmark{font-size:15.5vw}', '.foot .gmark{font-size:14.4vw}')):
+for a, b in (('font-size:min(calc((100vw - 80px)/6.1),223px)', 'font-size:min(calc((100vw - 80px)/6.55),204px)'),
+             ('font-size:min(96px,calc((100vw - 80px)/6.1))', 'font-size:min(89px,calc((100vw - 80px)/6.55))'),
+             ('.foot .gmark{font-size:calc((100vw - 80px)/6.1)}', '.foot .gmark{font-size:calc((100vw - 80px)/6.55)}')):
     assert s.count(a) == 1, a
     s = s.replace(a, b)
 open(css, 'w', encoding='utf-8', newline='\n').write(s)
