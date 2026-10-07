@@ -26,9 +26,20 @@ REPL = [
     ('spmobility.netlify.app', 'luxelectra.netlify.app'),   # og:image 절대경로
 ]
 
+# LE 는 깃 저장소(promm-1i/LE)라 .git 은 남기고 내용물만 비운다 — 통째로 지우면 원격 연결이 날아간다
+def rm(path):
+    shutil.rmtree(path, onerror=lambda f, p, e: (os.chmod(p, stat.S_IWRITE), f(p)))
+
+
 if os.path.exists(DST):
-    shutil.rmtree(DST, onerror=lambda f, p, e: (os.chmod(p, stat.S_IWRITE), f(p)))
-shutil.copytree(SRC, DST, ignore=shutil.ignore_patterns(
+    for name in os.listdir(DST):
+        if name == '.git':
+            continue
+        p = os.path.join(DST, name)
+        rm(p) if os.path.isdir(p) else os.remove(p)
+else:
+    os.makedirs(DST)
+shutil.copytree(SRC, DST, dirs_exist_ok=True, ignore=shutil.ignore_patterns(
     'make_le.py', 'make_variants.py', 'variants', 'le-brand', '__pycache__', '.git', '.impeccable'))
 
 # 문자열 교체 — html 외에 dealers.js(본사 카드)·css/js 머리말에도 사명이 들어 있다
